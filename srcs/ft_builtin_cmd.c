@@ -6,7 +6,7 @@
 /*   By: anoroita <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 14:54:03 by anoroita          #+#    #+#             */
-/*   Updated: 2018/09/03 14:54:06 by anoroita         ###   ########.fr       */
+/*   Updated: 2018/09/21 10:03:34 by anoroita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		ft_is_builtin(char *str)
 	if (ft_strequ("env", str))
 		return (1);
 	else if (ft_strequ("cd", str))
+		return (1);
+	else if (ft_strequ("echo", str))
 		return (1);
 	else if (ft_strequ("setenv", str))
 		return (1);
@@ -34,6 +36,8 @@ void	ft_exec_builtin(char **str, t_all *all)
 		ft_environ(str, all);
 	else if (ft_strequ("setenv", str[0]))
 		ft_set_environ(str, all);
+	else if (ft_strequ("echo", str[0]))
+		ft_echo(str, all);
 	else if (ft_strequ("unsetenv", str[0]))
 		ft_unset_env(str, all);
 	else if (ft_strequ("exit", str[0]))

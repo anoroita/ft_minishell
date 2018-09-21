@@ -6,7 +6,7 @@
 /*   By: anoroita <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 14:48:00 by anoroita          #+#    #+#             */
-/*   Updated: 2018/09/03 14:48:07 by anoroita         ###   ########.fr       */
+/*   Updated: 2018/09/21 09:02:10 by anoroita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,11 @@ t_env			*env_save(char *var, char *value);
 void			ft_push(t_all *all, t_env *env);
 void			ft_stock_env(char **env, t_all *all);
 void			ft_environ(char **str, t_all *all);
+int				ft_echo(char **str, t_all *all);
 void			ft_error_msg(int i, char *str);
+void			ft_special_print(char c);
 char			*ft_tab_to_space(char *cmd);
+void			ft_echo_print(char *str);
 char			**ft_env_assign(char *env);
 char			**ft_tild_split(char **split, char *home);
 void			ft_print_env(t_all	*all);
